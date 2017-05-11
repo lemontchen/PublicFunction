@@ -1,0 +1,15 @@
+POST接收JSON处理
+
+$key = $_POST['key'];
+
+//html_entity_decode() 函数把 HTML 实体转换为字符。
+
+$key = html_entity_decode($key);
+
+//stripslashes()删除反斜杠-----------该函数可用于清理从数据库中或者从 HTML 表单中取回的数据
+
+$key = stripslashes($key);
+
+//将JSON转成数组
+
+print_r(json_decode($key, true));exit;
